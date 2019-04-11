@@ -2,30 +2,19 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 		<title>Esperanto al Arcaicam Esperantom</title>
 		<meta name="description" content="Transigu esperantan texton al Arcaicam Esperantom">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
-		<link rel="stylesheet" href="/css/style.css">
-		<script src="js/index.js"></script>
+		<link rel="stylesheet" href="./css/style.css">
 	</head>
-	<body>
-		<section class="hero is-primary is-bold">
-			<div class="hero-body">
-				<div class="container">
-					<h1 class="title is-4"><a href="/">Esperanto al Arcaicam Esperantom</a></h1> 
-					<div class="subtitle">Transigu esperantan texton al Arcaicam Esperantom</div>
-				</div>
-			</div>
-
-		</section>
-		<section class="section">
-
-			<div class="container">
-
-				<div class="columns">
-					<div class="column is-two-fifths">
-						<textarea id="eo" class="textarea" placeholder="" rows="15">Patro nia, kiu estas en Ĉielo,
+	<body class="u-flex">
+		<header class="c-header u-flex">
+			<h1 class="c-header__title">Esperanto al Arcaicam Esperantom</h1>
+			<span class="c-header__sub-title">Transigu esperantan texton al Arcaicam Esperantom</span>
+		</header>
+		<main class="c-transigo">
+			<div class="c-transigo__container">
+				<textarea id="js-eo" class="c-transigo__textarea" placeholder="Patro nia, kiu estas en Ĉielo,
 Estu sanktigita Cia Nomo.
 Venu Cia regno,
 Plenumiĝu Cia volo
@@ -35,28 +24,26 @@ Kaj al ni pardonu niajn pekojn
 Kiel ankaŭ ni tiujn, kiuj kontraŭ ni pekas, pardonas.
 Kaj nin ne konduku en tenton
 Sed nin liberigu el malbono.
-Amen.</textarea>
-					</div>
-					<div class="column is-one-fifth">
-						<input class="button" type="submit" value="transigu" onclick="transigu();">
-					</div>
-					<div class="column is-two-fifths">
-						<textarea id="aeo" class="textarea" placeholder="" rows="15"></textarea>
-					</div>
-				</div>
-
+Amen.
+				"></textarea>
+				<img class="c-transigo__img" src="./img/arcaicam.svg" alt="flecha">
+				<textarea id="js-aeo" class="c-transigo__textarea--aeo" placeholder="Patrom niam, quiu estas en ChIelom,
+Estu sanctigitam Tziam Nomom.
+Wenu Tziam Regnom,
+Plenumirghu Tziam Wolom
+Quiel en ChIelom, tiel ancamù  sur Terom.
+Al nos donu hodiamù  panon nian chiutagan,
+Cay al nos pardonu niayn pecoyn
+Quiel ancamù  nos tiuyn, quiuy contramù  nos pecas, pardonas.
+Cay nin nœ conducu en tenton
+Sed nin liberigu el Malbonom.
+Amen.
+				"></textarea>
 			</div>
-		</section>
-		<footer class="footer">
-			<div class="content has-text-right">
-				<a href="https://github.com/esperanto/arcaicam-esperantom">Github</a>
-			</div>
+		</main>
+		<footer class="c-footer u-flex">
+			<a href="https://github.com/esperanto/arcaicam-esperantom" class="c-button">Github</a>
 		</footer>
-
-		<!-- Google Tag Manager (noscript) -->
-		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K2D5LZW"
-											height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-		<!-- End Google Tag Manager (noscript) -->
-
+		<script src="./js/index.js"></script>
 	</body>
 </html>
