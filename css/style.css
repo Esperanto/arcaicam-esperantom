@@ -1,0 +1,145 @@
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+img{
+  display: block;
+}
+
+:root{
+  --unua-koloro: #64b865;
+  --dua-koloro: #add867;
+  --tria-koloro: #63c3a6;
+  --neutrala-koloro: #6d6e71;
+}
+
+body{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.c-header{
+  background: linear-gradient(130deg, var(--unua-koloro) 0%, var(--dua-koloro) 100%);
+  background-size: 200% 200%;
+  animation: header 10s ease infinite;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+}
+
+@keyframes header{
+  0% {background-position: 0% 50%}
+  50% {background-position: 100% 100%}
+  100% {background-position: 0% 50%}
+}
+
+.c-header__title{
+  color: white;
+  font-size: 25px;
+}
+
+.c-header__sub-title{
+  color: #e6e6e6;
+  font-size: 16px;
+  font-weight: bold;
+  width: 80%;
+  margin-top: 10px;
+}
+
+.c-transigo{
+  background-color: var(--neutrala-koloro);
+  padding: 10px 20px;
+  width: 100%;
+  flex-grow: 2;
+}
+
+.c-transigo__container{
+  max-width: 1024px;
+  margin: auto;
+  height: 100%;
+}
+
+[class*="c-transigo__textarea--"], .c-transigo__textarea{
+  width: 100%;
+  height: 280px;
+  margin: 20px auto;
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--unua-koloro);
+}
+
+.c-transigo__textarea--aeo{
+  color: var(--neutrala-koloro);
+}
+
+.c-transigo__img{
+  margin: auto;
+  width: 40px;
+  opacity: .7;
+}
+
+.c-footer{
+  background-color: var(--tria-koloro);
+  width: 100%;
+  padding: 20px;
+}
+
+.c-button{
+  width: 100px;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--tria-koloro);
+  background-color: white;
+  padding: 10px;
+}
+
+@media (min-width: 426px) {
+
+  body{
+    height: 100vh;
+  }
+
+  .c-header{
+    height: 150px;
+  }
+
+  .c-header__title{
+    font-size: 30px;
+  }
+  
+  .c-header__sub-title{
+    font-size: 20px;
+  }
+
+  .c-transigo__container{
+    max-width: 1024px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  [class*="c-transigo__textarea--"], .c-transigo__textarea{
+    margin: 20px 20px;
+    max-width: 400px;
+    height: 80%;
+  }
+
+  .c-transigo__img{
+    transform: rotate(-90deg);
+  }
+}
+
+.u-flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
