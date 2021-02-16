@@ -1,9 +1,13 @@
-function transigu() {
-	let eo = document.getElementById('eo').value;
-	let aeo = eo;
+let eo = document.getElementById('js-eo'),
+		aeo= document.getElementById('js-aeo');
+
+eo.addEventListener('keyup', transigu);
+
+function transigu(e) {
+	let eoValue = e.target.value.trim();
 
 	// Substantivoj majuskle.
-	aeo = aeo.replace(
+	eoValue = eoValue.replace(
 		/([\wĉĝĥĵŝŭ])([\wĉĝĥĵŝŭ]*o)\b/g, 
 		function(match, match1, match2) { 
 			let replacement =  match1.toUpperCase() + match2;
@@ -12,64 +16,67 @@ function transigu() {
 	); 
 	
 	// Pronomoj.
-	aeo = aeo.replace(/\bmi\b/g, 'mihi');
-	aeo = aeo.replace(/\bci\b/g, 'tu');
-	aeo = aeo.replace(/\bli\b/g, 'lùi');
-	aeo = aeo.replace(/\bŝi\b/g, 'eshi');
-	aeo = aeo.replace(/\bĝi\b/g, 'eghi');
-	aeo = aeo.replace(/\bsi\b/g, 'sihi');
-	aeo = aeo.replace(/\bni\b/g, 'nos');
-	aeo = aeo.replace(/\bvi\b/g, 'vos');
-	aeo = aeo.replace(/\bili\b/g, 'ilùi');
+	eoValue = eoValue.replace(/\bmi\b/g, 'mihi');
+	eoValue = eoValue.replace(/\bci\b/g, 'tu');
+	eoValue = eoValue.replace(/\bli\b/g, 'lùi');
+	eoValue = eoValue.replace(/\bŝi\b/g, 'eshi');
+	eoValue = eoValue.replace(/\bĝi\b/g, 'eghi');
+	eoValue = eoValue.replace(/\bsi\b/g, 'sihi');
+	eoValue = eoValue.replace(/\bni\b/g, 'nos');
+	eoValue = eoValue.replace(/\bvi\b/g, 'vos');
+	eoValue = eoValue.replace(/\bili\b/g, 'ilùi');
 	
 	// Verboj.
-	aeo = aeo.replace(/i\b/g, 'ir');
+	eoValue = eoValue.replace(/i\b/g, 'ir');
 
 	// Kazoj.
-	aeo = aeo.replace(/al (.+)o\b/g, '$1od'); // Dativo.
-	aeo = aeo.replace(/al (.+)oj\b/g, '$1oyd'); // Dativo pluralo.
+	eoValue = eoValue.replace(/al (.+)o\b/g, '$1od'); // Dativo.
+	eoValue = eoValue.replace(/al (.+)oj\b/g, '$1oyd'); // Dativo pluralo.
 
-	aeo = aeo.replace(/de (.+)o\b/g, '$1es'); // Genitivo.
-	aeo = aeo.replace(/de (.+)oj\b/g, '$1eys'); // Genitivo pluralo.
+	eoValue = eoValue.replace(/de (.+)o\b/g, '$1es'); // Genitivo.
+	eoValue = eoValue.replace(/de (.+)oj\b/g, '$1eys'); // Genitivo pluralo.
 
-	aeo = aeo.replace(/o\b/g, 'om'); // Nominativo.
-	aeo = aeo.replace(/oj\b/g, 'oy'); // Pluralo.
-	aeo = aeo.replace(/ojn\b/g, 'oyn'); // Akuzativo pluralo.
-
-
+	eoValue = eoValue.replace(/o\b/g, 'om'); // Nominativo.
+	eoValue = eoValue.replace(/oj\b/g, 'oy'); // Pluralo.
+	eoValue = eoValue.replace(/ojn\b/g, 'oyn'); // Akuzativo pluralo.
 
 
-	aeo = aeo.replace(/e\b/g, 'œ'); // Adverbo.
-	aeo = aeo.replace(/aŭ\b/g, 'ez'); 
-	aeo = aeo.replace(/a\b/g, 'am');  // Adjektivo nominativo.
-	aeo = aeo.replace(/aj\b/g, 'ay'); // Adjektivo pluralo.
+
+
+	eoValue = eoValue.replace(/e\b/g, 'œ'); // Adverbo.
+	eoValue = eoValue.replace(/aŭ\b/g, 'ez'); 
+	eoValue = eoValue.replace(/aû\b/g, 'ez'); 
+	eoValue = eoValue.replace(/a\b/g, 'am');  // Adjektivo nominativo.
+	eoValue = eoValue.replace(/aj\b/g, 'ay'); // Adjektivo pluralo.
 
 	// Majuskle
-	aeo = aeo.replace(/C/g, 'Tz');
-	aeo = aeo.replace(/Ĉ/g, 'Ch');
-	aeo = aeo.replace(/F/g, 'Ph');
-	aeo = aeo.replace(/Ĝ/g, 'Gh');
-	aeo = aeo.replace(/Ĥ/g, 'Qh');
-	aeo = aeo.replace(/J/g, 'Y');
-	aeo = aeo.replace(/Ĵ/g, 'Zh');
-	aeo = aeo.replace(/K(i|e)/g, 'Qu$1');
-	aeo = aeo.replace(/K/g, 'C');
-	aeo = aeo.replace(/Ŝ/g, 'Sh');
-	aeo = aeo.replace(/Ŭ/g, 'Ù');
-	aeo = aeo.replace(/V/g, 'W');
+	eoValue = eoValue.replace(/C/g, 'Tz');
+	eoValue = eoValue.replace(/Ĉ/g, 'Ch');
+	eoValue = eoValue.replace(/F/g, 'Ph');
+	eoValue = eoValue.replace(/Ĝ/g, 'Gh');
+	eoValue = eoValue.replace(/Ĥ/g, 'Qh');
+	eoValue = eoValue.replace(/J/g, 'Y');
+	eoValue = eoValue.replace(/Ĵ/g, 'Zh');
+	eoValue = eoValue.replace(/K(i|e)/g, 'Qu$1');
+	eoValue = eoValue.replace(/K/g, 'C');
+	eoValue = eoValue.replace(/Ŝ/g, 'Sh');
+	eoValue = eoValue.replace(/Ŭ/g, 'Ù');
+	eoValue = eoValue.replace(/Û/g, 'Ù');
+	eoValue = eoValue.replace(/V/g, 'W');
 	// Minuskle.
-	aeo = aeo.replace(/c/g, 'tz');
-	aeo = aeo.replace(/ĉ/g, 'ch');
-	aeo = aeo.replace(/f/g, 'ph');
-	aeo = aeo.replace(/ĝ/g, 'gh');
-	aeo = aeo.replace(/ĥ/g, 'qh');
-	aeo = aeo.replace(/j/g, 'y');
-	aeo = aeo.replace(/ĵ/g, 'zh');
-	aeo = aeo.replace(/k(i|e)/g, 'qu$1');
-	aeo = aeo.replace(/k/g, 'c');
-	aeo = aeo.replace(/ŝ/g, 'sh');
-	aeo = aeo.replace(/ŭ/g, 'ù ');
-	aeo = aeo.replace(/v/g, 'w');
+	eoValue = eoValue.replace(/c/g, 'tz');
+	eoValue = eoValue.replace(/ĉ/g, 'ch');
+	eoValue = eoValue.replace(/f/g, 'ph');
+	eoValue = eoValue.replace(/ĝ/g, 'gh');
+	eoValue = eoValue.replace(/ĥ/g, 'qh');
+	eoValue = eoValue.replace(/j/g, 'y');
+	eoValue = eoValue.replace(/ĵ/g, 'zh');
+	eoValue = eoValue.replace(/k(i|e)/g, 'qu$1');
+	eoValue = eoValue.replace(/k/g, 'c');
+	eoValue = eoValue.replace(/ŝ/g, 'sh');
+	eoValue = eoValue.replace(/ŭ/g, 'ù ');
+	eoValue = eoValue.replace(/û/g, 'ù ');
+	eoValue = eoValue.replace(/v/g, 'w');
 
-	document.getElementById('aeo').value = aeo;
+	aeo.value = eoValue;
 }
